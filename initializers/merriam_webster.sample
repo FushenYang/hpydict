@@ -1,0 +1,5 @@
+# please request api_key by http://www.dictionaryapi.com/
+
+MerriamWebster.configure do |c|
+  c[:api_key] = "api_key"
+end
