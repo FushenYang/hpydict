@@ -1,0 +1,11 @@
+source 'https://rubygems.org'
+
+gem 'sinatra'
+gem 'slim'
+gem 'rack'
+gem 'nori'
+gem 'nokogiri'
+gem 'mixlib-config'
+gem 'better_errors'
+gem 'binding_of_caller'
+gem 'debugger'

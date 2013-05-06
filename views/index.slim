@@ -1,0 +1,33 @@
+doctype html
+html lang="en"
+  head
+    title HpyDict
+    meta charset="utf-8"
+    meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+    script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+    link href="css/bootstrap.css" rel="stylesheet"
+    link href="css/flat-ui.css" rel="stylesheet"
+    link href="css/application.css" rel="stylesheet"
+    link rel="shortcut icon" href="favicon.ico"
+  body
+    .container
+      h1 
+        span = @word
+        span.pr = @mw[:pr]
+        audio.pr src="#{@mw[:sound_url]}" autoplay="autoplay" preload="auto" autobuffer="autobuffer"
+        span.tips <strong>a</strong> = play
+      hr
+
+javascript:
+  var play = function() {
+    $("audio.pr")[0].play();
+  }
+
+  $(document).keydown(function(e) {
+    if (e.keyCode==65) {
+      play();
+    }
+  });

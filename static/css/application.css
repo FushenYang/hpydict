@@ -1,0 +1,27 @@
+span.pr {
+  margin-left: 20px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+span.pr:before, span.pr:after {
+  content: '/'
+}
+
+span.tips {
+  float: right;
+  margin-left: 10px;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: #ccc
+}
+
+span.tips:before {
+  content: 'Keyboard Shortcuts: ';
+}
+
+span.tips strong {
+  color: #444;
+}
