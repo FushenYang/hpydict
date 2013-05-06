@@ -24,7 +24,12 @@ end
 get '/:word' do
   @word = params[:word]
   @mw = mw(@word)
+  @dict_url = dict(@word)
   slim :index
+end
+
+def dict(word)
+  "http://dict.cn/mini.php?q=#{word}"
 end
 
 def mw(word)
@@ -39,6 +44,7 @@ def mw(word)
   list = parser.parse(body)
   mw = list[:entry_list][:entry]
   mw = mw.first if mw.class == Array
+  raise 'unknown word' unless mw
   f = mw[:sound][:wav]
   mw[:sound_url] = "http://media.merriam-webster.com/soundc11/#{f[0]}/#{f}"
   mw
