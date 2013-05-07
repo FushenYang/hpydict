@@ -22,7 +22,7 @@ get '/' do
 end
 
 get '/:word' do
-  @word = params[:word]
+  @word = params[:word].downcase
   @mw = mw(@word)
   @dict_url = dict(@word)
   slim :index
