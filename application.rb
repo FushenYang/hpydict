@@ -22,10 +22,14 @@ get '/' do
 end
 
 get '/:word' do
-  @word = params[:word]
-  @mw = mw(@word)
-  @dict_url = dict(@word)
-  slim :index
+  @word = params[:word].downcase
+  begin
+    @mw = mw(@word)
+    @dict_url = dict(@word)
+    slim :index
+  rescue
+    redirect "http://dict.youdao.com/search?q=#{@word}"
+  end
 end
 
 def dict(word)
